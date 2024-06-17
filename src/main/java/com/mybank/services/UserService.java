@@ -30,7 +30,7 @@ public class UserService {
         users.add(new User(name));
     }
 
-    public String listAll(){
-        return this.users.toString();
+    public ArrayList<User> listAll(){
+        return this.users;
     }
 }

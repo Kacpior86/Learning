@@ -4,11 +4,11 @@ import java.util.UUID;
 
 public class User {
     private String id;
-    private String Name;
+    private String name;
 
     public User(String name) {
         this.id = UUID.randomUUID().toString();
-        Name = name;
+        this.name = name;
     }
 
     public String getId() {
@@ -20,10 +20,10 @@ public class User {
     }
 
     public String getName() {
-        return Name;
+        return this.name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 }

@@ -17,7 +17,7 @@ public class TransactionService {
         this.transactions.add(transaction);
     }
 
-    public String listAll(){
-        return this.transactions.toString();
+    public ArrayList<Transaction> listAll(){
+        return this.transactions;
     }
 }
