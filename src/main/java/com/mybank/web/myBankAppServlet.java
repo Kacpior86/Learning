@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class myBankAppServlet extends HttpServlet {
 
@@ -20,7 +21,7 @@ public class myBankAppServlet extends HttpServlet {
                 Application.userService.create(name);
 
                 response.setContentType("application/json; charset=UTF-8");
-                ArrayList<User> users = Application.userService.listAll();
+                List<User> users = Application.userService.listAll();
                 response.getWriter().print(Application.objectMapper.writeValueAsString(users));
             }
         }
@@ -31,9 +32,9 @@ public class myBankAppServlet extends HttpServlet {
                 String reference = request.getParameter("reference");
                 Application.transactionService.create(new Transaction(Application.userService.findByName(userName), amount, reference));
 
-                //response.setContentType("application/json; charset=UTF-8");
-                //ArrayList<Transaction> transactions = Application.transactionService.listAll();
-                //response.getWriter().print(Application.objectMapper.writeValueAsString(transactions));
+                response.setContentType("application/json; charset=UTF-8");
+                List<Transaction> transactions = Application.transactionService.listAll();
+                response.getWriter().print(Application.objectMapper.writeValueAsString(transactions));
             }
         }
     }
@@ -42,12 +43,12 @@ public class myBankAppServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
     if (request.getRequestURI().equalsIgnoreCase("/users")){
         response.setContentType("application/json; charset=UTF-8");
-        ArrayList<User> users = Application.userService.listAll();
+        List users = Application.userService.listAll();
         response.getWriter().print(Application.objectMapper.writeValueAsString(users));
     }
     else if (request.getRequestURI().equalsIgnoreCase("/transactions")){
         response.setContentType("application/json; charset=UTF-8");
-        ArrayList<Transaction> transactions = Application.transactionService.listAll();
+        List transactions = Application.transactionService.listAll();
         response.getWriter().print(Application.objectMapper.writeValueAsString(transactions));
     }
     else if(request.getRequestURI().equalsIgnoreCase("/")){

@@ -3,10 +3,12 @@ package com.mybank.services;
 import com.mybank.model.User;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class UserService {
 
-    private final ArrayList<User> users = new ArrayList<>();
+    private final List<User> users = new CopyOnWriteArrayList<>();
 
     public User findById(String id){
         for (User user : users) {
@@ -30,7 +32,7 @@ public class UserService {
         users.add(new User(name));
     }
 
-    public ArrayList<User> listAll(){
+    public List<User> listAll(){
         return this.users;
     }
 }
