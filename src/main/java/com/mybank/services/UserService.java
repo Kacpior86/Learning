@@ -1,11 +1,13 @@
 package com.mybank.services;
 
 import com.mybank.model.User;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+@Component
 public class UserService {
 
     private final List<User> users = new CopyOnWriteArrayList<>();
