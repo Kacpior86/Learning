@@ -20,5 +20,7 @@ public class ApplicationLauncher {
         servlet.addMapping("/*");
 
         tomcat.start();
+
+
     }
 }
