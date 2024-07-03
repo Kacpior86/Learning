@@ -47,7 +47,7 @@ public class myBankAppServlet extends HttpServlet {
                 String amount = request.getParameter("amount");
                 String userName = request.getParameter("user_name");
                 String reference = request.getParameter("reference");
-                transactionService.create(new Transaction(userService.findByName(userName), amount, reference));
+                transactionService.create(new Transaction(userService.findByName(userName), amount, reference, transactionService.getSlogan()));
 
                 response.setContentType("application/json; charset=UTF-8");
                 List<Transaction> transactions = transactionService.listAll();
