@@ -1,0 +1,7 @@
+com\mybank\ApplicationLauncher.class
+com\mybank\services\UserService.class
+com\mybank\context\myBankConfiguration.class
+com\mybank\model\Transaction.class
+com\mybank\web\myBankAppServlet.class
+com\mybank\model\User.class
+com\mybank\services\TransactionService.class

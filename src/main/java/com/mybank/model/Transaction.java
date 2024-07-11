@@ -1,7 +1,5 @@
 package com.mybank.model;
 
-import org.springframework.beans.factory.annotation.Value;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
 

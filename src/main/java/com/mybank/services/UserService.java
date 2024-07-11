@@ -12,6 +12,8 @@ public class UserService {
 
     private final List<User> users = new CopyOnWriteArrayList<>();
 
+    public UserService() {}
+
     public User findById(String id){
         for (User user : users) {
             if (user.getId().equalsIgnoreCase(id)) {

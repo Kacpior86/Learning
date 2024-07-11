@@ -17,14 +17,13 @@ public class TransactionService {
     public TransactionService(UserService userService, @Value("${bank.slogan}") String slogan){
         this.userService = userService;
         this.slogan = slogan;
-        System.out.println(slogan);
     }
 
     public void create(Transaction transaction){
         this.transactions.add(transaction);
     }
 
-    public List listAll(){
+    public List<Transaction> listAll(){
         return this.transactions;
     }
 
